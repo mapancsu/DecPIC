@@ -5,7 +5,7 @@ A peak deconvolution method was developed based on differential evolution for LC
 
 * [ICExtract source](https://github.com/mapancsu/ICExtract)
 * [airPLS source](https://github.com/zmzhang/airPLS)
-* lwma smooth
+* lwma smooth.
 The C++ .dll files of ICExtract, airPLS and lwma methods can be downloaded in [url](https://github.com/mapancsu/ICExtract/releases/tag/DecPIC). 
 	
 # Usage
