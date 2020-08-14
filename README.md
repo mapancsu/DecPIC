@@ -1,31 +1,31 @@
 # DecPIC
 A peak deconvolution method was developed based on differential evolution for LC-MS data.
 
-# Install
+# Required Dependencies
 
-## Required Dependencies
-
-* [Visual Studio Community 2015 with Update 3](http://download.microsoft.com/download/b/e/d/bedddfc4-55f4-4748-90a8-ffe38a40e89f/vs2015.3.com_enu.iso)
-* [Anaconda Python 3.6.0 64bit](https://repo.continuum.io/archive/Anaconda3-4.3.1-Windows-x86_64.exe)
-* [SWIG 3.0.10](https://sourceforge.net/projects/swig/files/swigwin/swigwin-3.0.10/)
-* [CMake 3.7.1](https://cmake.org/files/v3.7/cmake-3.7.1-win64-x64.msi)
-* [Eigen 3.3.3](http://bitbucket.org/eigen/eigen/get/3.3.3.zip) 
-* [OpenMS 2.3.0](https://github.com/OpenMS)
+* [ICExtract source](https://github.com/mapancsu/ICExtract)
+* [airPLS source](https://github.com/zmzhang/airPLS)
+* lwma smooth
+The C++ .dll files of ICExtract, airPLS and lwma methods can be downloaded in [url](https://github.com/mapancsu/ICExtract/releases/tag/DecPIC). 
 	
-## Download
-
-* Download [ICExtract](https://github.com/mapancsu/ICExtract/archive/master.zip).
-* Unzip it into ICExtract directory.
-
-
 # Usage
 
-* Download ICExtract_python.zip file from [url](https://github.com/mapancsu/ICExtract/releases/tag/ICExtract).
-* Upzip ICExtract_python.zip file and go to /python directory.
+* Download DecPIC_python.zip file from [url](https://github.com/mapancsu/ICExtract/releases/tag/ICExtract).
+* Upzip DecPIC_python.zip file and go to /python directory.
 * Run following Python code fragment to extract ion chromatogram from mzXML or mzML file.
 
 	```python
-
+	from CIC_extraction import Get_CIC, Findpeaks, getpeakgroup, DEEMGfit
+	CICs = Get_CIC(file, 0.02, 300, 5, 10, 100)
+	```
+* Run following Python code fragment to find peak information of ion chromatograms.
+	```python
+	xb, xs, noise, total_peakpoint = Findpeaks(ic, 5, 2, 300)  
+    infor_group = getpeakgroup(total_peakpoint, xb, thre=0.1)
+	```
+* Run following Python code fragment to build EMG model for complex ion chromatograms.
+	```python
+	result = DEEMGfit(xdata, ydata)
 	```
 
 # Contact
