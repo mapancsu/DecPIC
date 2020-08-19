@@ -7,6 +7,7 @@ A peak deconvolution method was developed based on differential evolution for LC
 * [airPLS source](https://github.com/zmzhang/airPLS)
 * lwma smooth.
 The C++ bin files of ICExtract, airPLS and lwma methods can be downloaded in [url](https://github.com/mapancsu/DecPIC/releases). 
+* Python package: Numpy, Scipy, pylab.
 	
 # Usage
 
@@ -22,7 +23,7 @@ The C++ bin files of ICExtract, airPLS and lwma methods can be downloaded in [ur
 	```python
 	ic_ind = 1500
 	ic = CICs[ic_ind][:, 2] ## get ic intensity vector
-	xb, xs, noise, total_peakpoint = Findpeaks(ic, 5, 2, 300)  
+	xb, xs, noise, total_peakpoint = Findpeaks(ic, 5, 2, 300)
     infor_group = getpeakgroup(total_peakpoint, xb, thre=0.1)
 	```
 * Run following Python code fragment to build EMG model for complex ion chromatograms.
